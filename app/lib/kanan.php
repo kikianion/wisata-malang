@@ -1,96 +1,238 @@
-<?
+<script language="JavaScript" type="text/javascript">
+  var arrPariwisata = ["Taman", "Keluarga", "Pantai", "Air terjun", "Perkemahan", "Air panas", "Outbond", "Kolam renang", "Bendungan", "Agrowisata", "Perkebunan", "Sejarah"];
+  var arrPenginapan = ["Bintang", "Melati", "Villa"];
+  function ganti(pilihan) {
+      var arrPilihan = eval("arr" + pilihan);
+      while (arrPilihan.length < searchForm.tag.options.length) {
+          searchForm.tag.options[(searchForm.tag.options.length - 1)] = null;
+      }
+      var jml = arrPilihan.length;
+      for (var i = 0; i <= jml - 1;
+      i++
+              ) {
+      document.searchForm.tag.options[i] = new Option(arrPilihan[i]);
+      }
+  }
+  // function ganti(){}
+</script>
+
+<?php
+ob_start();
+// Quick Search
+?>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Quick Search</h3>
+    </div>
+    <div class="panel-body">
+        <form method=post action='index.php?module=tag_search' name='searchForm' class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Pencarian</label>
+                <div class="col-sm-8">
+                    <select name='jenis' onchange="ganti(document.searchForm.jenis.options[document.searchForm.jenis.selectedIndex].value)" class="form-control">
+                        <option value='Pariwisata'>Objek Wisata</option>
+                        <option value=Penginapan>Penginapan</option>
+                    </select>                
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-4 control-label">Tag</label>
+                <div class="col-sm-8">
+                    <select name='tag' class="form-control">
+                        <option value='Taman'>Taman</option>
+                        <option value='Keluarga'>Keluarga</option>
+                        <option value='Pantai'>Pantai</option>
+                        <option value='Air terjun'>Air terjun</option>
+                        <option value='Perkemahan'>Perkemahan</option>
+                        <option value='Air panas'>Air panas</option>
+                        <option value='Outbond'>Outbond</option>
+                        <option value='Kolam renang'>Kolam renang</option>
+                        <option value='Bendungan'>Bendungan</option>
+                        <option value='Agrowisata'>Agrowisata</option>
+                        <option value='Perkebunan'>Perkebunan</option>
+                        <option value='Sejarah'>Sejarah</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-default">Cari</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?php
+$kanan = ob_get_clean();
+
+ob_start();
+// Shoutbox
+?>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Shoutmix</h3>
+    </div>
+    <div class="panel-body">
+        <iframe src='lib/shoutbox.php' width=100% height=250 style="border:0"></iframe>
+        <form name=formshout action=lib/simpanshoutbox.php method=POST>
+            <table class=shout width=100% style="font-size:11px;">
+                <tr><td align="center">Nama<br/><input class=shout type=text name=nama size=15></td></tr>
+                <tr><td align="center">Website<br/><input class=shout type=text name=website size=15></td></tr>
+                <tr><td valign=top colspan=2 align="center">Pesan</td></tr><tr><td colspan=2 align="center"><textarea class=shout name='pesan' rows=3 cols=15></textarea></td></tr>
+<!--                <tr>
+                    <td colspan=2 align="center">
+                        <a onClick="addSmiley(':-)')"><img src='gambar/smiley/1.gif'></a> 
+                        <a onClick="addSmiley(':-(')"><img src='gambar/smiley/2.gif'></a>
+                        <a onClick=addSmiley(';-)')"><img src='gambar/smiley/3.gif'></a>
+                        <a onClick="addSmiley(';-D')"><img src='gambar/smiley/4.gif'></a>
+                        <a onClick="addSmiley(';;-)')"><img src='gambar/smiley/5.gif'></a>
+                        <a onClick="addSmiley('<:D>')"><img src='gambar/smiley/6.gif'></a>
+                    </td>
+                </tr>-->
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan=2 align="center">
+                        <input class=shout type=submit name=submit value=Kirim>
+                        <input class=shout type=reset name=reset value=Reset>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+</div>
+
+<?php
+$kanan .= ob_get_clean();
+
+
 // Kalender
 include_once "lib/fungsi_kalender.php";
-$kanan="";
-$kanan.="
-<table style=\"border:solid thin black;font-size:11px;\" cellpadding=\"5\" cellspacing=\"0\">
-<tr><td align=\"center\" class=judul_body colspan=7><b>Kalender</b></td></tr>
-<tr> 
-<td align=\"center\">";
-$tgl_skrg=date("d");
-$bln_skrg=date("n");
-$thn_skrg=date("Y");
-$kanan.="<div class='dt'>".buatkalender($tgl_skrg,$bln_skrg,$thn_skrg)."</div>"; 
 
-$kanan.="
-</td>
-</tr>
-</table>
-";
-
-$kanan.="<br />";
-
-// Statistik user
-$kanan.="
-<table style=\"border:solid thin black;font-size:11px;\" cellpadding=\"5\" cellspacing=\"0\" height=\"200\">
-<tr><td align=\"center\" class=judul_body colspan=7><b>Statistik User</b></td></tr>
-<tr><td align=\"left\"> 
-<p style=\"color: rgb(31, 134, 222); font-size: 11px; padding-bottom: 0px;\">";
-$ip      = $_SERVER['REMOTE_ADDR']; // Mendapatkan IP komputer user
-$tanggal = date("Ymd"); // Mendapatkan tanggal sekarang
-$waktu   = time(); // 
-
-// Mencek berdasarkan IPnya, apakah user sudah pernah mengakses hari ini 
-$s = mysql_query("SELECT * FROM statistik WHERE ip='$ip' AND tanggal='$tanggal'");
-// Kalau belum ada, simpan data user tersebut ke database
-if(mysql_num_rows($s) == 0){
-  mysql_query("INSERT INTO statistik(ip, tanggal, hits, online) VALUES('$ip','$tanggal','1','$waktu')");
-} 
-else{
-  mysql_query("UPDATE statistik SET hits=hits+1, online='$waktu' WHERE ip='$ip' AND tanggal='$tanggal'");
-}
-
-$pengunjung       = mysql_num_rows(mysql_query("SELECT * FROM statistik WHERE tanggal='$tanggal' GROUP BY ip"));
-$totalpengunjung  = mysql_result(mysql_query("SELECT COUNT(hits) FROM statistik"), 0); 
-$hits             = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik WHERE tanggal='$tanggal' GROUP BY tanggal"), 0); 
-$totalhits        = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik"), 0); 
-$tothitsgbr       = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik"), 0); 
-$bataswaktu       = time() - 300;
-$pengunjungonline = mysql_num_rows(mysql_query("SELECT * FROM statistik WHERE online > '$bataswaktu'"));
-
-$path = "gambar/counter/";
-$ext = ".png";
-
-$tothitsgbr = sprintf("%06d", $tothitsgbr);
-for ( $i = 0; $i <= 9; $i++ ){
-	$tothitsgbr = str_replace($i, "<img src='$path$i$ext' alt='$i'>", $tothitsgbr);
-}
-
-$kanan.="<p>$tothitsgbr </p>
-		
-      <img src=gambar/counter/hariini.png> Pengunjung hari ini : $pengunjung <br>
-      <img src=gambar/counter/total.png> Total pengunjung    : $totalpengunjung <br><br>
-      <img src=gambar/counter/hariini.png> Hits hari ini    : $hits <br>
-      <img src=gambar/counter/total.png> Total Hits       : $totalhits <br><br>
-      <img src=gambar/counter/online.png> Pengunjung Online: $pengunjungonline
-      </div>
-      
-	  </td></tr>
-	  </table>
-	  ";
-$kanan.="<br />";
-// Polling
-$po=mysql_query("SELECT * FROM survei");
-$poo=mysql_fetch_array($po);
-$kanan.="
-<table style=\"border:solid thin black;font-size:11px\" cellpadding=\"5\" cellspacing=\"0\" height=\"200\">
-<tr><td align=\"center\" class=judul_body colspan=7><b>Polling</b></td></tr>
-<tr><td align=\"left\" > 
-<p style=\"color: black; font-size: 11px; padding-bottom: 0px;\">
-
-	<b>$poo[survie]</b> <br /><br />
-	<form method=POST action='index.php?module=lihat_polling'>";
-
-$poling=mysql_query("SELECT * FROM poling WHERE aktif='Y'");
-while ($p=mysql_fetch_array($poling)){
-$kanan.="<p style=\"font-size=11px\"><input type=radio name=pilihan value='$p[id_poling]' />$p[pilihan]<br /></p>";
-}
-$kanan.="<p align=center><input type=submit value=Vote /></p>
-      </form>
-      <p align=center><a href=index.php?module=lihat_polling>Lihat Hasil Poling</a></p>
-	  </td></tr></table>
-	  ";
-$kanan.="<br />";
-
-
+ob_start();
 ?>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Kalender</h3>
+    </div>
+    <div class="panel-body">
+        <table style="xborder:solid thin black;font-size:11px;" cellpadding="5" cellspacing="0" width="100%">
+            <tr> 
+                <td align="center">
+                    <?php
+                    $tgl_skrg = date("d");
+                    $bln_skrg = date("n");
+                    $thn_skrg = date("Y");
+                    ?>
+                    <div class='dt'><?php echo buatkalender($tgl_skrg, $bln_skrg, $thn_skrg) ?></div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<?php
+$kanan .= ob_get_clean();
+
+ob_start();
+// Statistik user
+?>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Statistik User</h3>
+    </div>
+    <div class="panel-body">
+        <table style="xborder:solid thin black;font-size:11px;" cellpadding="0" cellspacing="0" xheight="200" width="100%">
+            <tr>
+                <td align="left"> 
+                    <p style="color: rgb(31, 134, 222); font-size: 11px; padding-bottom: 0px;">
+                        <?php
+                        $ip = $_SERVER['REMOTE_ADDR']; // Mendapatkan IP komputer user
+                        $tanggal = date("Ymd"); // Mendapatkan tanggal sekarang
+                        $waktu = time(); // 
+                        // Mencek berdasarkan IPnya, apakah user sudah pernah mengakses hari ini 
+                        $s = mysql_query("SELECT * FROM statistik WHERE ip='$ip' AND tanggal='$tanggal'");
+                        // Kalau belum ada, simpan data user tersebut ke database
+                        if (mysql_num_rows($s) == 0) {
+                          mysql_query("INSERT INTO statistik(ip, tanggal, hits, online) VALUES('$ip','$tanggal','1','$waktu')");
+                        } else {
+                          mysql_query("UPDATE statistik SET hits=hits+1, online='$waktu' WHERE ip='$ip' AND tanggal='$tanggal'");
+                        }
+
+                        $pengunjung = mysql_num_rows(mysql_query("SELECT * FROM statistik WHERE tanggal='$tanggal' GROUP BY ip"));
+                        $totalpengunjung = mysql_result(mysql_query("SELECT COUNT(hits) FROM statistik"), 0);
+                        $hits = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik WHERE tanggal='$tanggal' GROUP BY tanggal"), 0);
+                        $totalhits = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik"), 0);
+                        $tothitsgbr = mysql_result(mysql_query("SELECT SUM(hits) FROM statistik"), 0);
+                        $bataswaktu = time() - 300;
+                        $pengunjungonline = mysql_num_rows(mysql_query("SELECT * FROM statistik WHERE online > '$bataswaktu'"));
+
+                        $path = "gambar/counter/";
+                        $ext = ".png";
+
+                        $tothitsgbr = sprintf("%06d", $tothitsgbr);
+                        for ($i = 0; $i <= 9; $i++) {
+                          $tothitsgbr = str_replace($i, "<img src='$path$i$ext' alt='$i'>", $tothitsgbr);
+                        }
+                        ?>
+
+                    <p><?= $tothitsgbr ?> </p>
+                    <img src=gambar/counter/hariini.png> Pengunjung hari ini : <?= $pengunjung ?> <br>
+                    <img src=gambar/counter/total.png> Total pengunjung    : <?= $totalpengunjung ?> <br><br>
+                    <img src=gambar/counter/hariini.png> Hits hari ini    : <?= $hits ?> <br>
+                    <img src=gambar/counter/total.png> Total Hits       : <?= $totalhits ?> <br><br>
+                    <img src=gambar/counter/online.png> Pengunjung Online: <?= $pengunjungonline ?>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<?php
+$kanan .= ob_get_clean();
+
+ob_start();
+
+// Polling
+$po = mysql_query("SELECT * FROM survei");
+$poo = mysql_fetch_array($po);
+?>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Polling</h3>
+    </div>
+    <div class="panel-body">
+        <table style="xborder:solid thin black;font-size:11px" cellpadding="5" cellspacing="0" height="200">
+            <tr>
+                <td align="left" > 
+                    <form method=POST action='index.php?module=lihat_polling'>
+                        <span style="xcolor: black; xfont-size: 11px; xpadding-bottom: 0px;">
+                            <b><?= $poo[survie] ?></b> 
+                            <br><br>
+                            <?php
+                            $poling = mysql_query("SELECT * FROM poling WHERE aktif='Y'");
+                            while ($p = mysql_fetch_array($poling)) {
+                              ?>
+                              <p style='xfont-size:11px; margin-bottom: 3px '>
+                                  <input type=radio name=pilihan value='<?= $p[id_poling] ?>' /><?= $p[pilihan] ?>
+                              </p>
+                              <?php
+                            }
+                            ?>
+                            <p align=center><input type=submit value=Vote /></p>
+                        </span>
+                    </form>
+                    <p align=center><a href=index.php?module=lihat_polling>Lihat Hasil Poling</a></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<?php
+$kanan .= ob_get_clean();
+

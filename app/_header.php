@@ -25,7 +25,7 @@
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href='index.php?module=home'>Home</a></li>
-                        <li class="active"><a href='sigohan.php?module=peta'>Peta GIS</a></li>
+                        <li xclass="active"><a href='sigohan.php?module=peta'>Peta GIS</a></li>
                         <li><a href='index.php?module=news'>News</a></li>
                         <li><a href='index.php?module=wisata'>Wisata</a></li>
                         <li><a href='index.php?module=bukutamu'>Buku Tamu</a></li>
@@ -33,3 +33,4 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
+        <div class="container-fluid" style="xborder: 1px black dotted; margin-top: 65px" >

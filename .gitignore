@@ -1,0 +1,15 @@
+/nbproject/private/
+auto-git-push.bat
+application\config\database.php
+application/config/database.php
+_echo_log.php
+*.lnk
+*.bat
+_assume-unchanged.txt
+nbproject/
+nbproject\
+_logtime_old.txt
+composer.json
+composer.lock
+_FileStreamWrapper.php
+info.php

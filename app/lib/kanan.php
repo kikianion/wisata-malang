@@ -8,9 +8,9 @@
       }
       var jml = arrPilihan.length;
       for (var i = 0; i <= jml - 1;
-      i++
+              i++
               ) {
-      document.searchForm.tag.options[i] = new Option(arrPilihan[i]);
+          document.searchForm.tag.options[i] = new Option(arrPilihan[i]);
       }
   }
   // function ganti(){}
@@ -75,35 +75,24 @@ ob_start();
     </div>
     <div class="panel-body">
         <iframe src='lib/shoutbox.php' width=100% height=250 style="border:0"></iframe>
+        <hr>
         <form name=formshout action=lib/simpanshoutbox.php method=POST>
-            <table class=shout width=100% style="font-size:11px;">
-                <tr><td align="center">Nama<br/><input class=shout type=text name=nama size=15></td></tr>
-                <tr><td align="center">Website<br/><input class=shout type=text name=website size=15></td></tr>
-                <tr><td valign=top colspan=2 align="center">Pesan</td></tr><tr><td colspan=2 align="center"><textarea class=shout name='pesan' rows=3 cols=15></textarea></td></tr>
-<!--                <tr>
-                    <td colspan=2 align="center">
-                        <a onClick="addSmiley(':-)')"><img src='gambar/smiley/1.gif'></a> 
-                        <a onClick="addSmiley(':-(')"><img src='gambar/smiley/2.gif'></a>
-                        <a onClick=addSmiley(';-)')"><img src='gambar/smiley/3.gif'></a>
-                        <a onClick="addSmiley(';-D')"><img src='gambar/smiley/4.gif'></a>
-                        <a onClick="addSmiley(';;-)')"><img src='gambar/smiley/5.gif'></a>
-                        <a onClick="addSmiley('<:D>')"><img src='gambar/smiley/6.gif'></a>
-                    </td>
-                </tr>-->
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan=2 align="center">
-                        <input class=shout type=submit name=submit value=Kirim>
-                        <input class=shout type=reset name=reset value=Reset>
-                    </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nama</label>
+                <input class="form-control" type=text name=nama size=15>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Website</label>
+                <input class="form-control" type=text name=website size=15>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Pesan</label>
+                <textarea class="form-control" name='pesan' rows=3 cols=15></textarea>
+            </div>
+            <input class="btn btn-sm" type=submit name=submit value=Kirim>
+            <input class="btn btn-sm" type=reset name=reset value=Reset>
         </form>
-
     </div>
-
 </div>
 
 <?php

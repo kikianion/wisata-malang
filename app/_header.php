@@ -30,7 +30,7 @@
                         <li><a href='index.php?module=wisata'>Wisata</a></li>-->
                         <li><a href='#'>News</a></li>
                         <li><a href='#'>Wisata</a></li>
-                        <li><a href='index.php?module=bukutamu'>Buku Tamu</a></li>
+                        <li><a href='#'>Buku Tamu</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

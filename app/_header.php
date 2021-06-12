@@ -26,8 +26,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href='index.php?module=home'>Home</a></li>
                         <li xclass="active"><a href='sigohan.php?module=peta'>Peta GIS</a></li>
-                        <li><a href='index.php?module=news'>News</a></li>
-                        <li><a href='index.php?module=wisata'>Wisata</a></li>
+<!--                        <li><a href='index.php?module=news'>News</a></li>
+                        <li><a href='index.php?module=wisata'>Wisata</a></li>-->
+                        <li><a href='#'>News</a></li>
+                        <li><a href='#'>Wisata</a></li>
                         <li><a href='index.php?module=bukutamu'>Buku Tamu</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->

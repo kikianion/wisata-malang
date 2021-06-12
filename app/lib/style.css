@@ -1,0 +1,134 @@
+/*body {
+        font-family: Tahoma;
+        font-size: 11px;
+        text-align: left;
+        background-color: #FFFFFF;
+        background-repeat: repeat;
+        background-position: center;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+}*/
+#box {
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+#header {
+    font-family: Tahoma;
+    background-attachment: fixed;
+    margin: 0px;
+
+}
+input,textarea,select {
+    font-size: 11px;
+    background-color: #88B858;
+}
+
+
+/*a:link, a:visited {
+        font-family: Georgia;
+        font-size: 11px;
+        color: blue;
+        text-decoration: none;
+}
+a:hover {
+        font-family: Georgia;
+        font-size: 11px;
+        color: #FF9900;	
+}*/
+.kembali {
+    text-align: center;
+    color: #007495;
+}
+hr {
+    border-bottom-width: medium;
+    border-bottom-style: solid;
+    border-bottom-color: #1f1a17;
+    margin-bottom: 5px;
+}
+
+.judul_menu {
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: bold;
+    color: #5151FF;
+    padding-left: 4px;
+    background-color: #88B858;	
+}
+.judul_body {
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: bold;
+    color: #5151FF;
+    padding-left: 4px;
+    background-color: black;	
+}
+.judul_artikel {
+    font-family: Georgia;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FF9900;	
+    padding-left: 4px;	
+}
+.artikel {
+    font-family: Georgia;
+    font-size: 11px;
+    color: black;
+    padding-left: 4px;
+    letter-spacing: 1px;	
+}
+#rec01{
+    font-family: Georgia;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+    border: medium solid #88B858;
+    padding: 1px;
+}
+#rec05{
+    font-family: Georgia;
+    font-size: 11px;
+    color: black;
+    border: thin solid #88B858;
+    padding: 10px;
+}
+#rec02{
+    font-family: Georgia;
+    font-size: 11px;
+    font-weight: bold;
+    color: black;
+    border: medium solid #88B858;
+    padding: 10px;
+    background-color: #28A8D8;
+}
+.bg01{
+    /*background-color: #88B858;*/
+}
+.bg02{
+    /*background-color: #28A8D8;*/
+    padding: 5px;
+}
+.bg03{
+    /*background-color: white;*/
+    padding:5px;
+}
+#menubar{
+    font-family: Tahoma;
+    font-size: 11px;
+    font-style: normal;
+    /*background-color: #28A8D8;*/
+    padding: 5px;
+}
+#footer {
+    font-family: Tahoma;
+    font-size: 12px;
+    font-style: normal;
+
+    text-align: center;
+
+    clear: both;
+    margin: 0px;
+    color: #FFFFFF;	
+}

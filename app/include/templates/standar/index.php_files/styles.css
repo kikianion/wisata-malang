@@ -1,0 +1,162 @@
+.text_content {
+	FONT: 9pt Arial, Helvetica, sans-serif; COLOR: #000000
+}
+.text_comparisson {
+	FONT: 9pt Courier; COLOR: #000000
+}
+.text_table_content {
+	FONT: 9pt Arial, Helvetica, sans-serif; COLOR: #000000
+}
+.text_header {
+	FONT: bold 9pt Arial, Helvetica, sans-serif; COLOR: #324d77
+}
+.textsml_blue {
+	FONT: 7pt Arial, Helvetica, sans-serif; COLOR: #414170
+}
+.text_blue {
+	FONT: 9pt Arial, Helvetica, sans-serif; COLOR: #414170
+}
+.text_white {
+	FONT: 9pt Arial, Helvetica, sans-serif; COLOR: #ffffff
+}
+.header_top {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #324d77; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+.headbdysub {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt; COLOR: #332362; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+.footer {
+	FONT: 8pt Arial, Helvetica, sans-serif; COLOR: #000000
+}
+.table-header {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: Arial, Helvetica, Swiss, sans-serif
+}
+.table-text {
+	FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: Arial, Helvetica, Swiss, sans-serif
+}
+P {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+LI {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+BR {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+HR {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; BORDER-TOP-STYLE: none; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+SPAN {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+DIV {
+	FONT-WEIGHT: normal; FONT-SIZE: 8px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+BLOCKQUOTE {
+	FONT-WEIGHT: normal; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-VARIANT: normal
+}
+
+A:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.footer_nav A:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_nav A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_nav A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_nav A:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.footer_nav {
+	FONT: bold 10pt Arial, Helvetica, sans-serif; COLOR: white; TEXT-DECORATION: none
+}
+.footer_info A:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_info A:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_info A:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.footer_info A:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #324d77; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.footer_info {
+	FONT: bold 8pt Arial, Helvetica, sans-serif; COLOR: #324d77; TEXT-DECORATION: none
+}
+.xx A:link {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	text-decoration: none;
+	font-weight: normal;
+	color : #FFFFFF;
+}
+.xx A:visited {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	text-decoration: none;
+	font-weight: normal;
+	color : #FFFFFF;
+}
+
+.xx A:active{
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	text-decoration: none;
+	font-weight: normal;
+	color : #FFFFFF;
+}
+
+.xx A:HOVER {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	text-decoration : none;
+	font-weight: normal;
+	color : #FFCC00;
+}
+
+
+.tabletext {
+	FONT-SIZE: 9pt; BACKGROUND: white; COLOR: #414170; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tabletext A:link {
+	FONT-SIZE: 9pt; COLOR: #cc6600; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.tabletext A:visited {
+	FONT-SIZE: 9pt; COLOR: #cc6600; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.tabletext A:active {
+	FONT-SIZE: 9pt; COLOR: #cc6600; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.tabletext A:hover {
+	FONT-SIZE: 9pt; COLOR: #cc6600; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: underline
+}
+.tableheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #414170; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.tablegray {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #999999; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY {
+	COLOR: #414170;
+	FONT-FAMILY: arial, helvetica, sans-serif;
+	font-size: 10px;
+
+}

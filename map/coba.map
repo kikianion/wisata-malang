@@ -1,0 +1,56 @@
+
+
+MAP
+
+  NAME "Indonesia"
+  STATUS ON
+  EXTENT 92.5 -19.5 142.5 14.0 
+  IMAGETYPE JPEG
+  SIZE 600 300
+  SHAPEPATH "../data/shp"
+  IMAGECOLOR 255 255 255
+
+  SYMBOLSET "../atribut/simbol/symbols.sym"
+  FONTSET "../atribut/font/fonts.txt"
+  
+  UNITS dd
+
+  
+
+  WEB
+    IMAGEPATH "/tmp/ms_tmp/" 
+    IMAGEURL "/ms_tmp/"   
+  END
+
+   
+      
+  LAYER 
+    
+    NAME "Propinsi"
+    DATA "jjj.shp"
+    STATUS DEFAULT
+    TYPE POLYGON
+    PROJECTION
+	"proj=utm"
+	"ellps=WGS84"
+	"datum=WGS84"
+	"zone=11"
+	"unit=m"
+	"south"
+	"no_defs"
+	  END
+
+    TOLERANCE 0
+    TOLERANCEUNITS PIXELS
+
+    CLASS
+      Name "Batas Propinsi"
+      COLOR 225 200 100
+      OUTLINECOLOR 0 0 0
+    END
+
+  END 
+
+   
+END 
+

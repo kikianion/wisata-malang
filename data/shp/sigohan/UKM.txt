@@ -1,0 +1,7 @@
+NAMAUKM	JENISUSAHA	PENGHASILA	LINTANG(Y)	BUJUR(X)
+UD Surya Bumi	Minyak Biji Matahari	5000000	-7.94	112.60
+UD Harapan	Mebel	400000	-7.93	112.60
+UD Rahmat Sentosa	Krupuk	200000	-7.94	112.61
+UD Lestari	Krupuk	2500000	-7.94	112.63
+UD Cahaya Utama	Kompor	2400000	-7.93	112.62
+UD Sumber Alam	Pengolahan Hasil Pertni	21500000	-7.95	112.64

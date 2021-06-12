@@ -1,0 +1,20 @@
+[leg_layer_html order=ascending opt_flag=15]  
+<tr>
+  <td align="center">
+    <input type="checkbox" name="legendlayername[]" 
+      value="[leg_layer_name]"
+      [if name=layer_status oper=eq value=1]CHECKED[/if]
+      [if name=layer_status oper=eq value=2]CHECKED[/if]>
+  </td>
+  <td>
+    &nbsp;
+    <img src="[leg_icon width=20 height=13]" width=20 height=13>
+    &nbsp;
+  </td>
+  <td>
+    <font face="Arial, Helvetica, sans-serif">
+    [metadata name=DESCRIPTION]
+    </font>
+  </td>
+</tr>
+[/leg_layer_html]

@@ -1,0 +1,71 @@
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Notice:  Undefined variable: kanan in N:\xampp-5.6.30\htdocs\siparmal\app\lib\kanan.php on line 8
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 17:13:08 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 17:13:08 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:5
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Notice:  Undefined variable: tengah in N:\xampp-5.6.30\htdocs\siparmal\app\lib\tengah.php on line 45
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 17:13:08 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 17:13:08 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:6
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Notice:  Undefined index: module in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 9
+[29-May-2021 17:13:08 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 17:13:08 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 17:13:32 Asia/Jakarta] PHP Fatal error:  Call to undefined function ms_newMapObj() in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_navigasi.php on line 8
+[29-May-2021 17:13:32 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 17:13:32 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\sigohan.php:0
+[29-May-2021 17:13:32 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\sigohan.php:3
+[29-May-2021 17:13:32 Asia/Jakarta] PHP   3. Main() N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_navigasi.php:4
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Notice:  Undefined variable: kanan in N:\xampp-5.6.30\htdocs\siparmal\app\lib\kanan.php on line 8
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:09:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:09:48 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:5
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Notice:  Undefined variable: tengah in N:\xampp-5.6.30\htdocs\siparmal\app\lib\tengah.php on line 45
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:09:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:09:48 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:6
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Notice:  Undefined index: module in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 9
+[29-May-2021 18:09:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:09:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:10:50 Asia/Jakarta] PHP Notice:  Undefined variable: tengah in N:\xampp-5.6.30\htdocs\siparmal\app\lib\tengah.php on line 45
+[29-May-2021 18:10:50 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:10:50 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:10:50 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:6
+[29-May-2021 18:10:50 Asia/Jakarta] PHP Notice:  Undefined index: module in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 9
+[29-May-2021 18:10:50 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:10:50 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:11:18 Asia/Jakarta] PHP Notice:  Undefined index: module in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 9
+[29-May-2021 18:11:18 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:11:18 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_paging.php on line 6
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:44 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:44 Asia/Jakarta] PHP   2. Paging->cariPosisi() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:236
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_paging.php on line 8
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:44 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:44 Asia/Jakarta] PHP   2. Paging->cariPosisi() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:236
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 251
+[29-May-2021 18:12:44 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:44 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_paging.php on line 6
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   2. Paging->cariPosisi() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:286
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_paging.php on line 8
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   2. Paging->cariPosisi() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:286
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Notice:  Use of undefined constant halaman - assumed 'halaman' in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 307
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Notice:  Undefined index: page in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_paging.php on line 33
+[29-May-2021 18:12:48 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:48 Asia/Jakarta] PHP   2. Paging->navHalaman() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:307
+[29-May-2021 18:12:50 Asia/Jakarta] PHP Notice:  Undefined index: submit in N:\xampp-5.6.30\htdocs\siparmal\app\index.php on line 176
+[29-May-2021 18:12:50 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:50 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\index.php:0
+[29-May-2021 18:12:52 Asia/Jakarta] PHP Fatal error:  Call to undefined function ms_newMapObj() in N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_navigasi.php on line 8
+[29-May-2021 18:12:52 Asia/Jakarta] PHP Stack trace:
+[29-May-2021 18:12:52 Asia/Jakarta] PHP   1. {main}() N:\xampp-5.6.30\htdocs\siparmal\app\sigohan.php:0
+[29-May-2021 18:12:52 Asia/Jakarta] PHP   2. include() N:\xampp-5.6.30\htdocs\siparmal\app\sigohan.php:3
+[29-May-2021 18:12:52 Asia/Jakarta] PHP   3. Main() N:\xampp-5.6.30\htdocs\siparmal\app\lib\class_navigasi.php:4

@@ -1,0 +1,170 @@
+
+
+MAP
+
+  NAME "Indonesia"
+  STATUS ON
+  EXTENT 112.498554687 -8.06561686202 112.766816406 -7.90148600252
+  IMAGETYPE PNG
+  SIZE 600 300
+  SHAPEPATH "../data/shp/sigohan"
+  IMAGECOLOR 155 155 155
+  SYMBOLSET "../atribut/simbol/symbols.sym"
+  FONTSET "../atribut/font/fonts.txt"
+  
+  UNITS dd
+  
+  WEB
+    IMAGEPATH "/tmp/ms_tmp/" 
+    IMAGEURL "/ms_tmp/"   
+  END
+
+  REFERENCE
+    COLOR -1 -1 -1
+    EXTENT 92.5 -19.5 142.5 14.0
+    IMAGE "index/id_index.jpg"
+    OUTLINECOLOR 255 0 0
+    SIZE 120 80
+    STATUS ON
+  END
+  
+  LEGEND
+    IMAGECOLOR 255 255 255
+    KEYSIZE 18 12
+    KEYSPACING 5 5
+    LABEL
+      SIZE MEDIUM
+      TYPE BITMAP
+      BUFFER 0
+      COLOR 0 0 89
+      FORCE FALSE
+      MINDISTANCE -1
+      MINFEATURESIZE -1
+      OFFSET 0 0
+      PARTIALS TRUE
+    END
+    POSITION LL
+    STATUS ON
+    TEMPLATE "../app/template_legend/legend.html"
+  END
+
+  QUERYMAP
+    COLOR 0 0 255
+    SIZE -1 -1
+    STATUS OFF
+    STYLE HILITE
+  END
+  
+  
+  SCALEBAR
+    
+    STYLE 0
+    UNITS kilometers
+    SIZE 400 3
+    BACKGROUNDCOLOR 0 0 0
+	COLOR 130 201 79
+	POSITION LC
+	TRANSPARENT TRUE
+  END
+      
+  LAYER 
+    
+    NAME "kecamatan"
+    DATA "batas_kecdd.shp"
+    STATUS DEFAULT
+    TYPE POLYGON
+	
+    METADATA
+      "DESCRIPTION" "Batas Propinsi"
+	   "RESULT_FIELDS" "KECAMATAN;ID"
+      "DESC_FIELDS" "Nama;Id"
+    END
+    LABELITEM KECAMATAN
+    TEMPLATE "../app/template_query/prop_query.html"
+    TOLERANCE 0
+    TOLERANCEUNITS PIXELS
+    
+	OFFSITE 117 120 179
+	TRANSFORM TRUE
+	
+    CLASS
+      Name "Batas Propinsi"
+      COLOR 136 184 88
+      OUTLINECOLOR 0 0 0	
+		LABEL
+        FONT fritqat-italic
+        TYPE truetype
+        SIZE 12
+        POSITION AUTO     
+        PARTIALS FALSE
+        OUTLINECOLOR 0 0 0      
+        COLOR 255 255 255 
+      END 
+    END
+
+  END 
+
+ LAYER 
+    
+    NAME "Jalan Kota"
+    DATA "jalankota_mlng_polydd.shp"
+    
+    TYPE LINE
+    TOLERANCE 0
+    TOLERANCEUNITS PIXELS
+    
+	OFFSITE 117 120 179
+	TRANSFORM TRUE
+	METADATA
+      "DESCRIPTION" "Jalan Kota"
+	  "RESULT_FIELDS" "NAMA_JALAN"
+      "DESC_FIELDS" "Nama_Jalan"
+    END
+	
+    CLASS
+      Name "Jalan Kota"
+      COLOR 0 0 0
+      OUTLINECOLOR 0 0 0	
+	  
+    END
+
+  END 
+ 
+ LAYER 
+    
+    NAME "pariwisata"
+    DATA "ukm.shp"
+    STATUS DEFAULT
+    TYPE POINT
+    TEMPLATE "../app/template_query/query.html"
+    TOLERANCE 0
+    TOLERANCEUNITS PIXELS
+    LABELITEM NAMA
+	OFFSITE 117 120 179
+	TRANSFORM TRUE
+	METADATA
+      "DESCRIPTION" "Tempat Pariwisata"
+	  "RESULT_FIELDS" "NAMA;ID"
+      "DESC_FIELDS" "Nama Pariwisata;Id"
+    END
+	CLASS
+      NAME "Tempat Pariwisata"
+      SYMBOL 7
+      SIZE 8
+      COLOR 255 0 0
+      
+      LABEL
+        FONT fritqat-italic
+        TYPE truetype
+        SIZE 7
+        POSITION AUTO     
+        PARTIALS FALSE
+        OUTLINECOLOR 255 255 255      
+        COLOR 0 0 0
+      END 
+      
+    END
+  END 
+  
+END 
+

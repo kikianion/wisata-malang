@@ -222,6 +222,15 @@ $poo = mysql_fetch_array($po);
         </table>
     </div>
 </div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Administrator</h3>
+    </div>
+    <div class="panel-body">
+        <a href="page_admin.php">Login</a>
+    </div>
+</div>
 <?php
 $kanan .= ob_get_clean();
 

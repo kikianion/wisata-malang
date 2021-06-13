@@ -2,7 +2,7 @@
 session_start();
 session_destroy();
 $psn="Thanks....You are logout";
-$alamat="../index.php?module=home";
+$alamat="../page_admin.php";
 header("Location:$alamat");
 
 ?>

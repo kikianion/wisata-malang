@@ -15,7 +15,7 @@ MAP
   UNITS dd
   
   WEB
-    IMAGEPATH "n:/ms4w/tmp/ms_tmp/" 
+    IMAGEPATH "/ms4w/tmp/ms_tmp/" 
     IMAGEURL "/ms_tmp/"   
   END
 

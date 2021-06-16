@@ -18,7 +18,7 @@ switch($_GET[act]){
     $body.="<h2>Manage Penginapan</h2>
           <input type=button value='Tambah Objek Penginapan' onclick=\"window.location.href='?page=man_penginapan&act=tambahpenginapan';\">
 		  <input type=button value='Tambah Foto Penginapan' onclick=\"window.location.href='?page=add_foto_penginapan';\">
-          <table width=100%>
+          <table width=100% class='table'>
 		  
           <th>no</th><th>Nama Penginapan</th><th>Alamat</th><th>Telepon</th><th>aksi</th>";
 
@@ -59,7 +59,7 @@ switch($_GET[act]){
 	$id=$_GET['id'];
 	$j=mysql_fetch_array(mysql_query("select * from penginapan where id='$id'"));
 	$nama=$j['nama'];
-	$body.="<table width=100%>
+	$body.="<table width=100%  class='table'>
 	<tr><td>$nama</td></tr>
 	<tr><td>
 	".getFotoPenginapan($j['id'])."
@@ -84,7 +84,7 @@ switch($_GET[act]){
     $body.="<h2>Tambah Penginapan</h2>
           <form method=POST enctype='multipart/form-data' action=$aksi?page=man_penginapan&act=input>
           
-          <table>
+          <table class='table'>
           <tr><td width=70>Nama</td>     <td> : <input type=text name='nama' size=60 value=''></td></tr>";
           
  
@@ -109,14 +109,14 @@ switch($_GET[act]){
   }
  // function ganti(){}
 </script>
-  <?
+  <?php
     $edit = mysql_query("SELECT * FROM penginapan WHERE id='$_GET[id]'");
     $r    = mysql_fetch_array($edit);
 
     $body.="<h2>Edit Penginapan</h2>
           <form method=POST enctype='multipart/form-data' action=$aksi?page=man_penginapan&act=update name='tambahForm'>
           <input type=hidden name=id value=$r[id]>
-          <table>
+          <table  class='table'>
           <tr><td width=70>Nama</td>     <td> : <input type=text name='nama' size=60 value='$r[nama]'></td></tr>";
           
  

@@ -17,7 +17,7 @@ switch($_GET[act]){
   default:
     $body.="<h2>Berita</h2>
           <input type=button value='Tambah Berita' onclick=\"window.location.href='?page=news&act=tambahberita';\">
-          <table>
+          <table class='table'>
           <tr><th>no</th><th>judul</th><th>tgl. posting</th><th>aksi</th></tr>";
 
     $p      = new Paging;
@@ -54,7 +54,7 @@ switch($_GET[act]){
   case "tambahberita":
     $body.="<h2>Tambah Berita</h2>
           <form method=POST action='$aksi?page=news&act=input' enctype='multipart/form-data'>
-          <table>
+          <table class='table'>
           <tr><td width=70>Judul</td>     <td> : <input type=text name='judul' size=60></td></tr>";
           
           
@@ -77,7 +77,7 @@ switch($_GET[act]){
     $body.="<h2>Edit Berita</h2>
           <form method=POST enctype='multipart/form-data' action=$aksi?page=news&act=update>
           <input type=hidden name=id value=$r[id_berita]>
-          <table>
+          <table class='table'>
           <tr><td width=70>Judul</td>     <td> : <input type=text name='judul' size=60 value='$r[judul]'></td></tr>";
           
  

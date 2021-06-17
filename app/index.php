@@ -1,5 +1,5 @@
 <?php
-//ob_start();
+
 require_once ('lib/fungsi_indotgl.php');
 include("lib/koneksi.php");
 include("lib/kanan.php");

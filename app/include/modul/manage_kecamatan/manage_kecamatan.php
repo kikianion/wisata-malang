@@ -72,16 +72,16 @@ switch ($_GET[act]) {
 <form method=POST enctype='multipart/form-data' action=$aksi?page=man_kecamatan&act=update>
 <input type=hidden name=id value=$r[id]>
 <table style=\"\" cellpadding=10px width=100% class='table'>
-<tr><td width=70>Kecamatan</td>     <td> : <input type=text name='nama' size=60 value='$r[nama]'></td></tr>
-<tr><td width=70>Pupulasi</td>     <td> : <input type=text name='populasi' size=60 value='$r[populasi]'></td></tr>
-<tr><td width=70>Kepadatan</td>     <td> : <input type=text name='kepadatan' size=60 value='$r[kepadatan]'></td></tr>
-<tr><td width=70>Luas</td>     <td> : <input type=text name='luas' size=60 value='$r[luas]'></td></tr>
-<tr><td>Keterangan</td><td> <textarea name=keterangan rows=4 cols=60>$r[keterangan]</textarea></td></tr>
+<tr><td width=70>Kecamatan</td>     <td>  <input class='form-control' type=text name='nama' size=60 value='$r[nama]'></td></tr>
+<tr><td width=70>Pupulasi</td>     <td>  <input class='form-control' type=text name='populasi' size=60 value='$r[populasi]'></td></tr>
+<tr><td width=70>Kepadatan</td>     <td>  <input class='form-control' type=text name='kepadatan' size=60 value='$r[kepadatan]'></td></tr>
+<tr><td width=70>Luas</td>     <td>  <input type=text class='form-control' name='luas' size=60 value='$r[luas]'></td></tr>
+<tr><td>Keterangan</td><td> <textarea name=keterangan class='form-control' rows=4 cols=60>$r[keterangan]</textarea></td></tr>
 ";
 
 
-    $body .= "<tr><td colspan=2><input type=submit value=Update>
-<input type=button value=Batal onclick=self.history.back()></td></tr>
+    $body .= "<tr><td colspan=2><input type=submit value=Update class='btn btn-primary'>
+<input type=button value=Batal onclick=self.history.back() class='btn btn-danger'></td></tr>
 </table></form>";
     break;
 }

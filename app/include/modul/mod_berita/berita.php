@@ -16,7 +16,7 @@ switch($_GET[act]){
   // Tampil Berita
   default:
     $body.="<h2>Berita</h2>
-          <input type=button value='Tambah Berita' onclick=\"window.location.href='?page=news&act=tambahberita';\">
+          <input type=button class='btn btn-primary' value='Tambah Berita' onclick=\"window.location.href='?page=news&act=tambahberita';\">
           <table class='table'>
           <tr><th>no</th><th>judul</th><th>tgl. posting</th><th>aksi</th></tr>";
 
@@ -55,18 +55,18 @@ switch($_GET[act]){
     $body.="<h2>Tambah Berita</h2>
           <form method=POST action='$aksi?page=news&act=input' enctype='multipart/form-data'>
           <table class='table'>
-          <tr><td width=70>Judul</td>     <td> : <input type=text name='judul' size=60></td></tr>";
+          <tr><td width=70>Judul</td>     <td> <input class='form-control' type=text name='judul' size=60></td></tr>";
           
           
     $body.="</td></tr>
-          <tr><td>Isi Berita</td>  <td> <textarea name='isi_berita' style='width: 450px; height: 350px;'></textarea></td></tr>
-          <tr><td>Gambar</td>      <td> : <input type=file name='fupload' size=40> 
+          <tr><td>Isi Berita</td>  <td> <textarea class='form-control' name='isi_berita' style='width: 450px; height: 350px;'></textarea></td></tr>
+          <tr><td>Gambar</td>      <td> <input type=file name='fupload' size=40 class='form-control'> 
                                           <br>Tipe gambar harus JPG/JPEG dan ukuran lebar maks: 400 px</td></tr>";
 
     
     $body.="</td></tr>
-          <tr><td colspan=2><input type=submit value=Simpan>
-                            <input type=button value=Batal onclick=self.history.back()></td></tr>
+          <tr><td colspan=2><input type=submit value=Simpan class='btn btn-primary'>
+                            <input type=button value=Batal onclick=self.history.back() class='btn btn-danger'></td></tr>
           </table></form>";
      break;
     
@@ -78,23 +78,23 @@ switch($_GET[act]){
           <form method=POST enctype='multipart/form-data' action=$aksi?page=news&act=update>
           <input type=hidden name=id value=$r[id_berita]>
           <table class='table'>
-          <tr><td width=70>Judul</td>     <td> : <input type=text name='judul' size=60 value='$r[judul]'></td></tr>";
+          <tr><td width=130>Judul</td>     <td> <input class='form-control' type=text class='form-control' name='judul' size=60 value='$r[judul]'></td></tr>";
           
  
           
     $body.="</td></tr>
-          <tr><td>Isi Berita</td>   <td> <textarea name='isi_berita' style='width: 450px; height: 350px;'>$r[isi_berita]</textarea></td></tr>
-          <tr><td>Gambar</td>       <td> :  ";
+          <tr><td>Isi Berita</td>   <td> <textarea class='form-control'  name='isi_berita' style='width: 450px; height: 350px;'>$r[isi_berita]</textarea></td></tr>
+          <tr><td>Gambar</td>       <td> ";
           if ($r[gambar]!=''){
-              $body.="<img src='../gambar/foto_berita/small_$r[gambar]'>";  
+              $body.="<img src='gambar/foto_berita/$r[gambar]'>";  
           }
     $body.="</td></tr>
-          <tr><td>Ganti Gbr</td>    <td> : <input type=file name='fupload' size=30> *)</td></tr>
+          <tr><td>Ganti Gbr*</td>    <td> <input type=file class='form-control' name='fupload' size=30> </td></tr>
           <tr><td colspan=2>*) Apabila gambar tidak diubah, dikosongkan saja.</td></tr>";
 
    
-    $body.="<tr><td colspan=2><input type=submit value=Update>
-                            <input type=button value=Batal onclick=self.history.back()></td></tr>
+    $body.="<tr><td colspan=2><input type=submit value=Update class='btn btn-primary'>
+                            <input type=button value=Batal onclick=self.history.back() class='btn btn-danger'></td></tr>
          </table></form>";
     break;  
 }

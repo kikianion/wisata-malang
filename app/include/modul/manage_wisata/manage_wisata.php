@@ -16,10 +16,11 @@ $aksi = "include/modul/manage_wisata/aksi.php";
 switch ($_GET[act]) {
   // Tampil Berita
   default:
-    $body .= "<h2>Manage Wisata</h2>
-          <input type=button value='Tambah Objek Wisata' onclick=\"window.location.href='page_admin.php?page=map';\">
-		  <input type=button value='Tambah Foto Wisata' onclick=\"window.location.href='?page=add_foto_wisata';\">
-		 
+    $body .= "<h2 style='xdisplay: inline-block'>Manage Wisata</h2>
+        <div class='btn-group'>
+          <input type=button class='btn btn-primary' value='Tambah Objek Wisata' onclick=\"window.location.href='page_admin.php?page=map';\">
+		  <input type=button class='btn btn-primary' value='Tambah Foto Wisata' onclick=\"window.location.href='?page=add_foto_wisata';\">
+		 </div>
           <table style=\"xborder:solid thin black\" width=100% xborder=1 class='table xtable-bordered'>
           <tr><td align=center>no</td><td align=center>Nama Wisata</td><td align=center>Jenis</td><td align=center>Alamat</td><td align=center>Tiket</td><td align=center>aksi</td></tr>";
 
@@ -34,10 +35,10 @@ switch ($_GET[act]) {
     $no = $posisi + 1;
     while ($r = mysql_fetch_array($tampil)) {
       $body .= "<tr><td align=center>$no</td>
-                <td align=center>$r[nama]</td>
-                <td align=center>$r[jenis]</td>
-				<td align=center>$r[alamat]</td>
-				<td align=center>$r[tiket]</td>
+                <td xalign=center>$r[nama]</td>
+                <td xalign=center>$r[jenis]</td>
+				<td xalign=center>$r[alamat]</td>
+				<td xalign=center>$r[tiket]</td>
 		            <td align=center><a href=?page=man_wisata&act=editwisata&id=$r[id]>Edit</a><br />
 		                <a href=?page=man_wisata&act=hapus&id=$r[id]>Hapus</a><br /> 
 						<a href=?page=penginapan_wisata&act=tambahpenginapan&id=$r[id]&nama=$r[nama]>Tambah Penginapan</a><br />
@@ -69,7 +70,7 @@ switch ($_GET[act]) {
           a = document.tambahForm.stag.innerHTML + pilihan + ",";
           document.tambahForm.stag.innerHTML = a;
       }
-    // function ganti(){}
+      // function ganti(){}
     </script>
     <?php
 
@@ -116,7 +117,7 @@ switch ($_GET[act]) {
           var a = document.tambahForm.stag.innerHTML + pilihan + ",";
           document.tambahForm.stag.innerHTML = a;
       }
-    // function ganti(){}
+      // function ganti(){}
     </script>
     <?php
 
@@ -126,14 +127,14 @@ switch ($_GET[act]) {
     $body .= "<h2>Edit Wisata</h2>
 <form method=POST enctype='multipart/form-data' action=$aksi?page=man_wisata&act=update name='tambahForm'>
 <input type=hidden name=id value=$r[id]>
-<table class='table'>
-<tr><td>ID</td><td>: <input type='text' name='id' value='$r[id]'></td></tr>
-<tr><td width=70>Nama Wisata</td>     <td> : <input type=text name='nama' size=60 value='$r[nama]'></td></tr>
-<tr><td width=70>Jenis Wisata</td>     <td> : <textarea name='jenis' cols=70 rows=3>$r[jenis]</textarea></td></tr>
-<tr><td width=70>Alamat</td>     <td> : <input type=text name='alamat' size=60 value='$r[alamat]'></td></tr>
-<tr><td width=70>Biaya Masuk</td>     <td> : <input type=text name='tiket' size=60 value='$r[tiket]'></td></tr>
-<tr><td width=70>Keterangan</td>     <td> : <textarea name='keterangan' cols=70 rows=10>$r[keterangan]</textarea></td></tr>
-<tr><td>Tag</td><td>:<select name=tag onchange=\"ganti(document.tambahForm.tag.options[document.tambahForm.tag.selectedIndex].value)\">
+<table class='table' class='table'>
+<tr><td>ID</td><td> <input type='text' name='id' class='form-control' value='$r[id]'></td></tr>
+<tr><td width=70>Nama Wisata</td>     <td>  <input class='form-control' type=text name='nama' size=60 value='$r[nama]'></td></tr>
+<tr><td width=70>Jenis Wisata</td>     <td>  <textarea class='form-control' name='jenis' cols=70 rows=3>$r[jenis]</textarea></td></tr>
+<tr><td width=70>Alamat</td>     <td>  <input type=text name='alamat' class='form-control' size=60 value='$r[alamat]'></td></tr>
+<tr><td width=70>Biaya Masuk</td>     <td>  <input type=text name='tiket' class='form-control' size=60 value='$r[tiket]'></td></tr>
+<tr><td width=70>Keterangan</td>     <td>  <textarea name='keterangan' cols=70 class='form-control' rows=10>$r[keterangan]</textarea></td></tr>
+<tr><td>Tag</td><td><select class='form-control' name=tag onchange=\"ganti(document.tambahForm.tag.options[document.tambahForm.tag.selectedIndex].value)\">
 <option value='Taman'>Taman</option>
 <option value='Keluarga'>Keluarga</option>
 <option value='Pantai'>Pantai</option>
@@ -147,12 +148,12 @@ switch ($_GET[act]) {
 <option value='Sejarah'>Sejarah</option>
 <option value='Agrowisata'>Agrowisata</option>
 </select></td></tr>
-<tr><td></td><td><textarea name='stag' rows=4 cols=70></textarea></td></tr>
+<tr><td></td><td><textarea class='form-control' name='stag' rows=4 cols=70></textarea></td></tr>
 ";
 
 
-    $body .= "<tr><td colspan=2><input type=submit value=Update>
-<input type=button value=Batal onclick=self.history.back()></td></tr>
+    $body .= "<tr><td colspan=2><input type=submit value=Update class='btn btn-primary'>
+<input type=button value=Batal onclick=self.history.back() class='btn btn-danger'></td></tr>
 </table></form>";
     break;
 }

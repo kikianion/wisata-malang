@@ -3,11 +3,12 @@ $tag = $_POST['tag'];
 $key = $_POST['key'];
 $jenis = $_POST['jenis'];
 
+
+$prev=ob_get_clean();
 ob_start();
 
 $judul = "";
 $content = "";
-
 if ($jenis == "Pariwisata") {
   $judul = "Pencarian objek wisata $tag";
   $sql = "select * from wisata where tag like '%$tag%'";
@@ -21,6 +22,7 @@ if ($jenis == "Pariwisata") {
           <tr><td>Tiket</td><td><?= $d[tiket] ?></td></tr>
       </table>
       <?php
+//      $content = ob_get_clean();
     }
   } else {
     ?>
@@ -31,29 +33,31 @@ if ($jenis == "Pariwisata") {
 //    $content .= ob_get_clean();
   }
 } else { //Search penginapan
-  $judul = "Pencarian Penginapan $tag";
+  $body .= "<table style=\"font-size:11px;padding:10px;border:solid thin black;\" width=100%>
+		<tr><td align=\"center\" class=judul_body colspan=7><b>Pencarian Penginapan $tag</b></td></tr>";
+
   $sql = "select * from penginapan where tag like '%$tag%' and nama like '%$key%'";
   $h = mysql_query($sql);
   if (mysql_num_rows($h) > 0) {
     while ($d = mysql_fetch_array($h)) {
-      ?>
-      <table width=100% class="table">
-          <tr><th width="250">Nama Penginapan</th><th><?= $d[nama] ?></th></tr>
-          <tr><td>Alamat</td><td><?= $d[alamat] ?></td></tr>
-          <tr><td>Telpon</td><td><?= $d[telpon] ?></td></tr>
-      </table>
-      <?php
+      $body .= "<tr><td>
+	<table width=100% style='font-size:11px'>
+		<tr><td>Nama Penginapan</td><td>:</td><td>$d[nama]</td></tr>
+		<tr><td>Alamat</td><td>:</td><td>$d[alamat]</td></tr>
+		<tr><td>Telpon</td><td>:</td><td>$d[telpon]</td></tr>
+		<tr><td colspan=3><hr></td></tr>
+	</table>
+	</td></tr>";
     }
   } else {
-    ?>
-    <table width=100% class="table">
-        <tr><td align=center style='color:red'>Penginapan tidak ditemukan</td></tr>
-    </table>
-    <?php
+    $body .= "<tr><td>
+	<table width=100% style='font-size:11px'>
+		<tr><td align=center style='color:red'>Penginapan tidak ditemukan</td></tr>
+	</table>
+	</td></tr>";
   }
 }
-
-$c = ob_get_clean();
+$body .= "<tr><td colspan=6><div class=kembali><a href=javascript:history.go(-1)>[Kembali]</a></td></tr></table>";
 ob_start();
 ?>
 <div class="panel panel-primary">
@@ -61,9 +65,10 @@ ob_start();
         <h3 class="panel-title"><?= $judul ?></h3>
     </div>
     <div class="panel-body">
-        <?= $c ?>
+        <?= "" ?>
     </div>
-    <div class="panel-footer text-center"><a href=javascript:history.go(-1)>[Kembali]</a></div>
 </div>
 <?php
-$body = ob_get_clean();
+//$body = ob_get_clean();
+$body = "";
+

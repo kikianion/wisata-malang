@@ -8,6 +8,9 @@
             .navbar a{
                 font-weight: bold;
             }
+            .panel-title{
+              text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -29,8 +32,8 @@
 <!--                        <li><a href='index.php?module=news'>News</a></li>
                         <li><a href='index.php?module=wisata'>Wisata</a></li>-->
                         <li><a href='index.php?module=news'>News</a></li>
-                        <li><a href='#'>Wisata</a></li>
-                        <li><a href='#'>Buku Tamu</a></li>
+                        <li><a href='index.php?module=wisata'>Wisata</a></li>
+                        <li><a href='index.php?module=bukutamu'>Buku Tamu</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>

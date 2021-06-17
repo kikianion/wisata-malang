@@ -4,7 +4,7 @@ switch($_GET[act]){
   // Tampil Shoutbox
   default:
     $body.="<h2>Shoutbox</h2>
-          <table>
+          <table class='table'>
           <tr><th>no</th><th>nama</th><th>pesan</th><th>aktif</th><th>aksi</th></tr>";
 
     $p      = new Paging;
@@ -15,8 +15,8 @@ switch($_GET[act]){
 
     $no = $posisi+1;
     while ($r=mysql_fetch_array($tampil)){
-      $body.="<tr><td>$no</td>
-                <td width=80>$r[nama]</td>
+      $body.="<tr><td width=50>$no</td>
+                <td width=180>$r[nama]</td>
                 <td width=290>$r[pesan]</td>
                 <td width=5 align=center>$r[aktif]</td>
                 <td><a href=?page=mini_chat&act=editshoutbox&id=$r[id_shoutbox]>Edit</a> | 
@@ -39,13 +39,13 @@ switch($_GET[act]){
     $body.="<h2>Edit Shoutbox</h2>
           <form method=POST action=$aksi?page=mini_chat&act=update>
           <input type=hidden name=id value=$r[id_shoutbox]>
-          <table>
-          <tr><td>Nama</td><td>     : <input type=text name='nama' size=30 value='$r[nama]'></td></tr>
-          <tr><td>Website</td><td>  : <input type=text name='website' size=30 value='$r[website]'></td></tr>
-          <tr><td>Pesan</td><td> <textarea name=pesan style='width: 400px; height: 100px;'>$r[pesan]</textarea></td></tr>";
+          <table class='table'>
+          <tr><td>Nama</td><td>     <input class='form-control' type=text name='nama' size=30 value='$r[nama]'></td></tr>
+          <tr><td>Website</td><td>  <input  class='form-control' type=text name='website' size=30 value='$r[website]'></td></tr>
+          <tr><td>Pesan</td><td> <textarea  class='form-control' name=pesan style='width: 400px; height: 100px;'>$r[pesan]</textarea></td></tr>";
 
     if ($r[aktif]=='Y'){
-      $body.="<tr><td>Aktif</td> <td> : <input type=radio name='aktif' value='Y' checked>Y  
+      $body.="<tr><td>Aktif</td> <td> <input type=radio name='aktif' value='Y' checked>Y  
                                       <input type=radio name='aktif' value='N'> N</td></tr>";
     }
     else{
@@ -53,8 +53,8 @@ switch($_GET[act]){
                                       <input type=radio name='aktif' value='N' checked>N</td></tr>";
     }
 
-    $body.="<tr><td colspan=2><input type=submit value=Update>
-                            <input type=button value=Batal onclick=self.history.back()></td></tr>
+    $body.="<tr><td colspan=2><input type=submit value=Update class='btn btn-primary'>
+                            <input type=button class='btn btn-danger' value=Batal onclick=self.history.back()></td></tr>
           </table></form>";
     break;  
 }

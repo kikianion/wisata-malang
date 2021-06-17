@@ -136,9 +136,9 @@ ob_start();
         <h3 class="panel-title">Statistik User</h3>
     </div>
     <div class="panel-body">
-        <table style="xborder:solid thin black;font-size:11px;" cellpadding="0" cellspacing="0" xheight="200" width="100%">
+        <table width="100%">
             <tr>
-                <td align="left"> 
+                <td align="center"> 
                     <p style="color: rgb(31, 134, 222); font-size: 11px; padding-bottom: 0px;">
                         <?php
                         $ip = $_SERVER['REMOTE_ADDR']; // Mendapatkan IP komputer user
@@ -196,18 +196,18 @@ $poo = mysql_fetch_array($po);
         <h3 class="panel-title">Polling</h3>
     </div>
     <div class="panel-body">
-        <table style="xborder:solid thin black;font-size:11px" cellpadding="5" cellspacing="0" height="200">
+        <table style="width: 100%">
             <tr>
                 <td align="left" > 
                     <form method=POST action='index.php?module=lihat_polling'>
-                        <span style="xcolor: black; xfont-size: 11px; xpadding-bottom: 0px;">
+                        <span >
                             <b><?= $poo[survie] ?></b> 
                             <br><br>
                             <?php
                             $poling = mysql_query("SELECT * FROM poling WHERE aktif='Y'");
                             while ($p = mysql_fetch_array($poling)) {
                               ?>
-                              <p style='xfont-size:11px; margin-bottom: 3px '>
+                              <p style='xfont-size:11px; margin-bottom: 5px '>
                                   <input type=radio name=pilihan value='<?= $p[id_poling] ?>' /><?= $p[pilihan] ?>
                               </p>
                               <?php

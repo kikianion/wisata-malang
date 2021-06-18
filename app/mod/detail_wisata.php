@@ -9,7 +9,7 @@
 $id = $_GET['id'];
 $sql = "select * from wisata where id='$id'";
 $h = mysql_query($sql);
-$body .= "<table style=\"font-size:11px;padding:10px;border:solid thin black;\" width=100%>
+$body .= "<table class='table'>
 		<tr><td align=\"center\" class=judul_body colspan=7><b>Objek Wisata</b></td></tr>
 	";
 $data = mysql_fetch_array($h);
@@ -23,11 +23,11 @@ $alamat = $data['alamat'];
 $tiket = $data['tiket'];
 $ket = $data['keterangan'];
 $body .= "<tr><td colspan=7 align=right><a href='lib/pdf_hand.php?module=$mod&id=$id'><img src='gambar/pdf.gif' border=0></a></td></tr>
-	<tr><td>Nama : $nama</td></tr>
-	<tr><td>Jenis : $jenis</td></tr>
-	<tr><td>Alamat : $alamat</td></tr>
-	<tr><td>Tiket : $tiket</td></tr>
-	<tr><td>Keterangan : $ket</td></tr>
+	<tr><td>Nama  <b>$nama</b></td></tr>
+	<tr><td>Jenis  <b>$jenis</b></td></tr>
+	<tr><td>Alamat  <b>$alamat</b></td></tr>
+	<tr><td>Tiket  <b>$tiket</b></td></tr>
+	<tr><td>Keterangan  <b>$ket</b></td></tr>
 	<tr><td>Daftar Penginapan</td></tr>
 	
 	";
@@ -35,7 +35,7 @@ $body .= "<tr><td colspan=7 align=right><a href='lib/pdf_hand.php?module=$mod&id
 if ($listPenginapan != null || $listPenginapan != "") {
   $ls = explode(",", $listPenginapan);
   $h = count($ls);
-  $body .= "<tr><td colspan=2><table style='font-size:11px;border:solid thin black' width=100%>";
+  $body .= "<tr><td colspan=2><table class='table table-bordered table-condensed'>";
   for ($i = 0; $i < $h; $i++) {
     $s = mysql_query("select * from penginapan where id='$ls[$i]'");
 

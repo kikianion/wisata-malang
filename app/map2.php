@@ -1,188 +1,138 @@
 <?php
 session_start();
-//ob_start();
-require_once ('lib/class_paging.php');
-require_once ('lib/functions.php');
-require_once ('lib/fungsi_indotgl.php');
-include_once "lib/koneksi.php"; //===============Koneksi database
-//require_once('include/replaceman.php');
-//===================autentikasi admin
-
-
-$page = $_GET['page'];
-if (cek_admin_session($_SESSION['sesi_admin'], $_SESSION['sesi_kode'])) {
-  $left = "<table><tr><td><a href=''>Member List</a></td></tr>
-			<tr><td><a href=''>Kost list</a></td></tr>
-			</table>";
-  $body = "<table width=100% cellpadding=5 cellspacing=5>";
-//---------------------------navigasi menu
-  ob_start();
-  
-  include("_top_admin.php");
-  $menu = ob_get_clean();
-
-  ob_start();
-  ?>
-  <div class="list-group">
-      <span href="#" class="list-group-item active">
-          Modul
-      </span>
-      <a href='?page=news' class="list-group-item">News</a>
-      <a href='?page=mini_chat' class="list-group-item">Mini Chat</a>
-      <a href='?page=polling' class="list-group-item">Polling</a>
-      <a href='?page=buku_tamu' class="list-group-item">Buku Tamu</a>
-  </div>  
-
-  <?php
-  $kiri = ob_get_clean();
-//------------------------parsing konten
-  switch ($page) {
-    case "man_wisata":
-      include_once "include/modul/manage_wisata/manage_wisata.php";
-      break;
-    case "man_penginapan":
-      include_once "include/modul/manage_penginapan/manage_penginapan.php";
-      break;
-    case "penginapan_wisata":
-      include_once "include/modul/penginapan_wisata/penginapan_wisata.php";
-      break;
-    case "man_kecamatan":
-      include_once "include/modul/manage_kecamatan/manage_kecamatan.php";
-      break;
-    case "news":
-      include_once "include/modul/mod_berita/berita.php";
-      break;
-    case "download":
-      include_once "include/modul/mod_download/download.php";
-      break;
-    case "mini_chat":
-      include_once "include/modul/mod_shoutbox/shoutbox.php";
-      break;
-    case "polling":
-      include_once "include/modul/mod_poling/poling.php";
-      break;
-    case "buku_tamu":
-      include_once "include/modul/mod_buku_tamu/bukutamu.php";
-      break;
-    case "man_foto":
-      include_once "include/man_foto.php";
-      break;
-    case "add_foto_wisata":
-      include_once "include/add_foto_wisata.php";
-      break;
-    case "add_foto_penginapan":
-      include_once "include/add_foto_penginapan.php";
-      break;
-    case "map":
-      header("location:map.php");
-      break;
-  }
-  $body .= "</table>";
-}
-//-----------------------
-else {//not logged in
-  if ($_POST['submit'] != null) {
-    if (cek_admin_session($_POST['nama_admin'], $_POST['kode_admin'])) {
-      $sesi_admin = $_POST['nama_admin'];
-      $sesi_kode = $_POST['kode_admin'];
-
-      //$h=_query("select kd_admin from admin where nama='$sesi_admin' and kode='$sesi_kode'");
-      //$data=_fetch_array($h);$sesi_id_admin=$data['kd_member'];
-      //session_register("sesi_id_admin");
-
-      session_register("sesi_admin");
-      session_register("sesi_kode");
-      header('location:page_admin.php?page=reservasi_list');
-    } else {
-      $body .= "Sorry....you don't have permission";
-    }
-  }
-}
-//-----------------------tulis konten pada template
+ob_start();
+  require("lib/class_navigasi2.php");
+  include("lib/koneksi.php");
+  require_once ('lib/functions.php');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <script language="JavaScript">
-          function bukajendela(url) {
-              window.open(url, "window_baru", "width=1000,height=700,left=120,top=10,resizable=1,scrollbars=1");
-          }
-        </script>
+<head>
+<title></title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<?
+if(cek_admin_session($_SESSION['sesi_admin'],$_SESSION['sesi_kode'])){
+//---------------------------navigasi menu
+$menu.="
+		 <li><a href=\"page_admin.php?page=man_wisata\">Manage Wisata</a></li>
+		 <li><a href=\"page_admin.php?page=man_penginapan\">Manage Penginapan</a></li>
+		 <li><a href=\"page_admin.php?page=penginapan_wisata\">Penginapan Wisata</a></li> 
+		<li><a href=\"page_admin.php?page=man_kecamatan\">Manage Kecamatan</a></li>
+		 <li><a href=\"include/logout.php\">Logout</a></li>
+		 ";
+$kiri.="<table class=dt cellpadding=10px>
+		<tr><td class=ht>Modul</td></tr>
+		<tr><td><a href='page_admin.php?page=add_foto_wisata'>Tambah Foto Wisata</a></td></tr>	
+		<tr><td><a href='page_admin.php?page=add_foto_penginapan'>Tambah Foto Penginapan</a></td></tr>	
+		<tr><td><a href='page_admin.php?page=news'>News</a></td></tr>
+		<tr><td><a href='page_admin.php?page=mini_chat'>Mini Chat</a></td></tr>
+		<tr><td><a href='page_admin.php?page=polling'>Polling</a></td></tr>
+		<tr><td><a href='page_admin.php?page=buku_tamu'>Buku Tamu</a></td></tr>
+		</table>
+		";
+?>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="shortcut icon" href="favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css" /> 
-        <link href="style.css" rel="stylesheet" type="text/css" />
-        <style>
-            .col-md-9 h2{
-                margin-top: 0px;
-            }
-            .col-md-9 input[type=button], .col-md-9 input[type=submit], .col-md-9 a.btn{
-                margin-bottom: 5px;
-            }
-        </style>
+<div id="wrapper">
+  <div id="header">
+    <div id="menuutama">
+   	  <ul>
+		<?=$menu?>
+	  </ul>
+    </div>
+  </div>
+  <div id="rightcontent2">
+    <p align=center>
+      <?=$kiri?>
+    </p>
+  </div>
+  <div id="leftcontent2">
+    <p align=center>
+	<script language="JavaScript" type="text/javascript">
+  function ganti(pilihan){
+	a=document.main.stag.innerHTML+pilihan+",";
+	document.main.stag.innerHTML=a;
+  }
+ // function ganti(){}
+</script>
+<form name="main" method="POST" enctype='multipart/form-data'>
 
-    </head>
+<table align="center" border="0" width=600px cellspacing="0" cellpadding="0">
+<tr><td>
+<?
+		$aksi="include/modul/manage_wisata/aksi.php";
+		echo "          
+          <table>
+		  <tr><td>ID</td><td>: <input type='text' name='id'></td></tr>
+          <tr><td width=70>Nama Wisata</td>     <td> : <input type=text name='nama' size=60'></td></tr>
+		  <tr><td width=70>Jenis Wisata</td>     <td> : <textarea name='jenis' cols=70 rows=3></textarea></td></tr>
+		  <tr><td width=70>Alamat</td>     <td> : <input type=text name='alamat' size=60'></td></tr>
+		  <tr><td width=70>Biaya Masuk</td>     <td> : <input type=text name='tiket' size=60'></td></tr>
+		  <tr><td width=70>Keterangan</td>     <td> : <textarea name='keterangan' cols=70 rows=10></textarea></td></tr>
+		  <tr><td>Tag</td><td>:<select name=tag onchange=\"ganti(document.main.tag.options[document.main.tag.selectedIndex].value)\">
+		  <option value='Taman'>Taman</option>
+		  <option value='Keluarga'>Keluarga</option>
+		  <option value='Pantai'>Pantai</option>
+		  <option value='Air terjun'>Air terjun</option>
+		  <option value='Perkemahan'>Perkemahan</option>
+		  <option value='Air panas'>Air panas</option>
+		  <option value='Outbond'>Outbond</option>
+		  <option value='Kolam renang'>Kolam renang</option>
+		  <option value='Bendungan'>Bendungan</option>
+		  <option value='Perkebunan'>Perkebunan</option>
+		  <option value='Sejarah'>Sejarah</option>
+		  <option value='Agrowisata'>Agrowisata</option>
+		  </select></td></tr>
+		  <tr><td></td><td><textarea name='stag' rows=4 cols=70></textarea></td></tr>
+		  
+         </table>
+	";
 
-    <body>
-        <?= $menu ?>
-        <?php
-//        echo "<br><br><br><br><br><br><br>$$$".$_SESSION['nama_admin']."^". $_SESSION['kode_admin'].cek_admin_session($_SESSION['nama_admin'], $_SESSION['kode_admin'])."%%";
-        if (!cek_admin_session($_SESSION['sesi_admin'], $_SESSION['sesi_kode'])) {
-          ?>
-          <div class="container" style="margin-top: 50px">
-              <div class="row">
-                  <div class="col-md-6 col-md-offset-2" style="border:1px solid black; background: #CCCCCC; border-radius: 9px">
-                      <div class="row">
-                          <div class="col-md-3" style="xborder:1px solid black;">
-                              <i class="glyphicon glyphicon-user" style="font-size: 8em; margin-top:105px"></i>
+?>
+</td></tr>
+<tr><td>
 
-                          </div>
-                          <div class="col-md-9">
-                              <form action='page_admin.php' method='post' class="form-horizontal">
-                                  <div class="form-group">
-                                      <label for="inputEmail3" class="col-sm-3 control-label" style="text-align: center; width:100%"><h1 >Login</h1></label>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="inputEmail3" class="col-sm-3 control-label">Administrator</label>
-                                      <div class="col-sm-9">
-                                          <input type='text' name='nama_admin' class="form-control">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="inputPassword3" class="col-sm-3 control-label">Kode</label>
-                                      <div class="col-sm-3">
-                                          <input type='password' name='kode_admin' class="form-control" >
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <div class="col-sm-offset-3 col-sm-9">
-                                          <input type="submit" name="submit" class="btn btn-default" value="Login">
-                                      </div>
-                                  </div>
-                              </form>
+<table border="0" width=100% cellspacing="0" cellpadding="0">
+<tr><td align=left><?php Main(); ?></td></tr>
+</table>
+</td></tr>
+<tr><td align="center" class=bg01><input TYPE="radio" NAME="CMD" VALUE="ZOOM_ALL" 
+              <?php if (IsCurrentTool("ZOOM_ALL")) echo "CHECKED";?>
+            >&nbsp;&nbsp;<img SRC="gambar/icon_zoomfull.png" WIDTH="20" HEIGHT="20">
+   <input TYPE="radio" NAME="CMD" VALUE="ZOOM_IN" 
+             <?php if (IsCurrentTool("ZOOM_IN")) echo "CHECKED";?>
+            >&nbsp;&nbsp;<img SRC="gambar/icon_zoomin.png" WIDTH="20" HEIGHT="20">	
+	<input TYPE="radio" NAME="CMD" VALUE="ZOOM_OUT" 
+              <?php if (IsCurrentTool("ZOOM_OUT")) echo "CHECKED";?>
+            >&nbsp;&nbsp;<img SRC="gambar/icon_zoomout.png" WIDTH="20" HEIGHT="20">
+	<input TYPE="radio" NAME="CMD" VALUE="RECENTER" 
+              <?php if (IsCurrentTool("RECENTER")) echo "CHECKED";?>
+            >&nbsp;&nbsp;<img SRC="gambar/icon_recentre.png" WIDTH="20" HEIGHT="20">
+	
+	<input TYPE="radio" NAME="CMD" VALUE="ADD" 
+                <?if (IsCurrentTool( "ADD" )) echo "CHECKED";?>
+              >&nbsp;&nbsp;<img SRC="gambar/icon_info.png" WIDTH="20" HEIGHT="20"></td></tr>
 
-                          </div>
-                      </div>
+</table>
+</form> 
+<table>
+<tr><td><?
 
-                  </div>
-              </div>
-          </div>
-          <?php
-        }
-        ?>
+?>
 
-        </div>
-        <div class="container-fluid" style="margin-top:160px">
-            <div class="row">
-                <div class="col-md-3">
-                    <?= $kiri ?>
-                </div>
-                <div class="col-md-9">
-                    <?= $body ?>
-                </div>
-            </div>
-        </div>
+<?
 
-    </body>
+?>	  
+</td></tr></table>   
+ </p>
+  </div>
+  <div id="clearer"></div>
+  <div id="footer">Copyright 2010 &copy; 2010 by wisata-malang.com. All Rights Reserved.</div>
+</div>
+<?
+}
+?>
+</body>
 </html>
+ 

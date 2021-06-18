@@ -8,7 +8,7 @@
 
 $id = $_GET['id'];
 $h = mysql_query("select * from berita where id_berita='$id'");
-$body .= "<table style=\"font-size:11px;padding:10px;border:solid thin black;height:500px;\" width=100%>
+$body .= "<table width=100% class='table'>
 	<tr><td align=\"center\" class=judul_body colspan=7><b>Detail Berita</b></td></tr>
 	";
 while ($d = mysql_fetch_array($h)) {

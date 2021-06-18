@@ -67,7 +67,7 @@ $m=$_GET['module'];
                                       $j = mysql_query($sql);
                                       if (mysql_num_rows($j) > 0) {
                                         $temp = 1;
-                                        echo "<table width=100% cellpadding=10 cellspacing=10>";
+                                        echo "<table width=100% class='table'>";
                                         while ($d = mysql_fetch_array($j)) {
                                           $id = $d['id'];
                                           $nama = $d['nama'];
@@ -76,7 +76,7 @@ $m=$_GET['module'];
                                           if ($temp % 2 != 0) {
                                             echo "<tr>";
                                           }
-                                          echo "<td id=rec05>";
+                                          echo "<td xid=rec05>";
                                           echo "Nama: $nama <br />Alamat: " . $alamat . "<br />Keterangan: " . $ket . "<br />";
                                           echo "<a href='index.php?module=detail_wisata&id=$id'>Selengkapnya</a></td>";
                                           echo "</td>";
@@ -131,7 +131,7 @@ $m=$_GET['module'];
                                 <div class="input-group">
                                     <input type="text" name='key' class="form-control" placeholder="Cari...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-default" type="submit" value='Search'>&nbsp;<i class="glyphicon glyphicon-search"></i>&nbsp;</button>
+                                        <button class="btn btn-default" type="submit" name='submit' value='submit'>&nbsp;<i class="glyphicon glyphicon-search"></i>&nbsp;</button>
                                     </span>
                                 </div>
                             </form>

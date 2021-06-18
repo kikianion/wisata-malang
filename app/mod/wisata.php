@@ -40,7 +40,7 @@ ob_start();
                   <td align=center><?= $r[jenis] ?></td>
                   <td align=center><?= $r[alamat] ?></td>
                   <td align=center><?= $r[tiket] ?></td>
-                  <td align=center><a href='?module=detail_wisata&id=$r[id]'>Detail</a></td>
+                  <td align=center><a href='?module=detail_wisata&id=<?=$r[id]?>'>Detail</a></td>
               </tr>
               <?php
               $no++;

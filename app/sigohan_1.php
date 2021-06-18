@@ -138,33 +138,36 @@ $m=$_GET['module'];
                                 </td></tr>
                             <tr><td class=judul_menu>Hasil Query</td></tr>
                             <tr><td id=rec02>
-                                    <? 
-                                    DrawPointQueryResults(); 
-                                    if($_POST['submit']!=null || $_POST['submit']!=""){
-                                    $key=$_POST['key'];
-                                    $sql="select * from wisata where nama like '%$key%'";
-                                    $j=mysql_query($sql);
-                                    if(mysql_num_rows($j) > 0){
-                                    $temp=1;
-                                    echo "<table width=100% cellpadding=10 cellspacing=10>";
-                                    while($d=mysql_fetch_array($j)){
-                                    $id=$d['id'];$nama=$d['nama'];$alamat=$d['alamat'];$ket=$d['keterangan'];
-                                    if($temp%2!=0){
-                                    echo "<tr>";
-                                    }
-                                    echo "<td id=rec05>";
-                                    echo "Nama: $nama <br />Alamat: ".$alamat."<br />Keterangan: ".$ket."<br />";
-                                    echo "<a href='index.php?module=detail_wisata&id=$id'>Selengkapnya</a></td>";
-                                    echo "</td>";
-                                    if($temp%2==0){
-                                    echo "</tr>";
-                                    }
-                                    $temp++;
-                                    }
-                                    echo "</table>";
-                                    }else{
-
-                                    }
+                                    <?php
+                                    DrawPointQueryResults();
+                                    if ($_POST['submit'] != null || $_POST['submit'] != "") {
+                                      $key = $_POST['key'];
+                                      $sql = "select * from wisata where nama like '%$key%'";
+                                      $j = mysql_query($sql);
+                                      if (mysql_num_rows($j) > 0) {
+                                        $temp = 1;
+                                        echo "<table width=100% cellpadding=10 cellspacing=10>";
+                                        while ($d = mysql_fetch_array($j)) {
+                                          $id = $d['id'];
+                                          $nama = $d['nama'];
+                                          $alamat = $d['alamat'];
+                                          $ket = $d['keterangan'];
+                                          if ($temp % 2 != 0) {
+                                            echo "<tr>";
+                                          }
+                                          echo "<td id=rec05>";
+                                          echo "Nama: $nama <br />Alamat: " . $alamat . "<br />Keterangan: " . $ket . "<br />";
+                                          echo "<a href='index.php?module=detail_wisata&id=$id'>Selengkapnya</a></td>";
+                                          echo "</td>";
+                                          if ($temp % 2 == 0) {
+                                            echo "</tr>";
+                                          }
+                                          $temp++;
+                                        }
+                                        echo "</table>";
+                                      } else {
+                                        
+                                      }
                                     }
                                     ?>
                                 </td></tr>

@@ -36,7 +36,7 @@ ob_start();
               <tr>
                   <td><?=$no?></td>
                   <td align=center><img src='gambar/foto_berita/<?= $d[gambar] ?>' width=110 border=0></td>
-                  <td align=center><a href='?module=det_news&id=$bid'><?= $bjudul ?></a></td>
+                  <td align=center><a href='?module=det_news&id=<?=$bid?>'><?= $bjudul ?></a></td>
                   <td align=center><?= $bhari ?>,<?= $tgl ?></td>
                   <td align=center><?= $bdibaca ?></td>
               </tr>

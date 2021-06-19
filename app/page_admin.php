@@ -131,6 +131,7 @@ if (!cek_admin_session($_SESSION['sesi_admin'], $_SESSION['sesi_kode'])) {
                           <div class="form-group">
                               <div class="col-sm-offset-3 col-sm-9">
                                   <input type="submit" name="submit" class="btn btn-default" value="Login">
+                                  <a href='./' class="btn btn-default">Home</a>
                               </div>
                           </div>
                       </form>

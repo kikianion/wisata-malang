@@ -108,39 +108,38 @@ if (cek_admin_session($_SESSION['sesi_admin'], $_SESSION['sesi_kode'])) {
                   </div>
                   <div class="form-group">
                       <label for="inputEmail3" class="col-sm-2 control-label"></label>
-                      <div class="col-sm-10">
+                      <div class="col-sm-10 text-center" >
                           <?php Main(); ?>
+                          <table align="center" border="0" width=600px cellspacing="0" cellpadding="0">
+                              <tr>
+                                  <td align="center" class=bg01>
+                                      <input TYPE="radio" NAME="CMD" VALUE="ZOOM_ALL" 
+                                             <?php if (IsCurrentTool("ZOOM_ALL")) echo "CHECKED"; ?>>&nbsp;
+                                      <img SRC="gambar/icon_zoomfull.png" WIDTH="20" HEIGHT="20">
+                                      <input TYPE="radio" NAME="CMD" VALUE="ZOOM_IN" 
+                                      <?php if (IsCurrentTool("ZOOM_IN")) echo "CHECKED"; ?>
+                                             >&nbsp;&nbsp;<img SRC="gambar/icon_zoomin.png" WIDTH="20" HEIGHT="20">	
+                                      <input TYPE="radio" NAME="CMD" VALUE="ZOOM_OUT" 
+                                      <?php if (IsCurrentTool("ZOOM_OUT")) echo "CHECKED"; ?>
+                                             >&nbsp;&nbsp;<img SRC="gambar/icon_zoomout.png" WIDTH="20" HEIGHT="20">
+                                      <input TYPE="radio" NAME="CMD" VALUE="RECENTER" 
+                                      <?php if (IsCurrentTool("RECENTER")) echo "CHECKED"; ?>
+                                             >&nbsp;&nbsp;<img SRC="gambar/icon_recentre.png" WIDTH="20" HEIGHT="20">
+
+                                      <input TYPE="radio" NAME="CMD" VALUE="ADD" 
+                                             <?php if (IsCurrentTool("ADD")) echo "CHECKED"; ?>>&nbsp;
+                                      <img SRC="gambar/icon_info.png" WIDTH="20" HEIGHT="20">
+                                  </td>
+                              </tr>
+
+                          </table>
                       </div>
+
                   </div>
 
               </form>
 
               <?= $body ?>
-              <form name="main" method="POST" enctype='multipart/form-data'>
-                  <table align="center" border="0" width=600px cellspacing="0" cellpadding="0">
-                      <tr>
-                          <td align="center" class=bg01>
-                              <input TYPE="radio" NAME="CMD" VALUE="ZOOM_ALL" 
-                                     <?php if (IsCurrentTool("ZOOM_ALL")) echo "CHECKED"; ?>>&nbsp;
-                              <img SRC="gambar/icon_zoomfull.png" WIDTH="20" HEIGHT="20">
-                              <input TYPE="radio" NAME="CMD" VALUE="ZOOM_IN" 
-                              <?php if (IsCurrentTool("ZOOM_IN")) echo "CHECKED"; ?>
-                                     >&nbsp;&nbsp;<img SRC="gambar/icon_zoomin.png" WIDTH="20" HEIGHT="20">	
-                              <input TYPE="radio" NAME="CMD" VALUE="ZOOM_OUT" 
-                              <?php if (IsCurrentTool("ZOOM_OUT")) echo "CHECKED"; ?>
-                                     >&nbsp;&nbsp;<img SRC="gambar/icon_zoomout.png" WIDTH="20" HEIGHT="20">
-                              <input TYPE="radio" NAME="CMD" VALUE="RECENTER" 
-                              <?php if (IsCurrentTool("RECENTER")) echo "CHECKED"; ?>
-                                     >&nbsp;&nbsp;<img SRC="gambar/icon_recentre.png" WIDTH="20" HEIGHT="20">
-
-                              <input TYPE="radio" NAME="CMD" VALUE="ADD" 
-                                     <?php if (IsCurrentTool("ADD")) echo "CHECKED"; ?>>&nbsp;
-                              <img SRC="gambar/icon_info.png" WIDTH="20" HEIGHT="20">
-                          </td>
-                      </tr>
-
-                  </table>
-              </form> 
           </div>
       </div>
   </div>

@@ -22,6 +22,22 @@ ob_start();
 ?>
 <div class="panel panel-primary">
     <div class="panel-heading">
+        <h3 class="panel-title">Menu</h3>
+    </div>
+    <div class="panel-body">
+        <div class="btn-group-vertical" role="group" aria-label="..." style="width: 100%">
+            <a class="btn btn-primary" href='index.php?module=home'>Home</a>
+            <a class="btn btn-primary" href='sigohan.php?module=peta'>Peta GIS</a>
+            <a class="btn btn-primary" href='index.php?module=news'>News</a>
+            <a class="btn btn-primary" href='index.php?module=wisata'>Wisata</a>
+            <a class="btn btn-primary" href='index.php?module=bukutamu'>Buku Tamu</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
         <h3 class="panel-title">Quick Search</h3>
     </div>
     <div class="panel-body">

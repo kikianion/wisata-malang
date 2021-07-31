@@ -1,9 +1,14 @@
 <?php
-
 ob_start();
 ?>
+<div style="width: 100%; text-align: center">
+    <img src="gambar/depan1.jpg" style="width: 100%; height:auto; border: 1px solid black; "?>
+</div>
+
+<br>
+</br>
 <table border=0 width=100% style='font-size:12px;xborder: thin solid black;color:black;padding:10px;' cellpadding=10>
-    <tr><td align=center><b>Bingung cari tempat wisata ?<br/>"wisata-malang"<br/>solusinya</b></td></tr>
+    <tr><td align=center><h2>Bingung cari tempat wisata ?<br/>"wisata-malang"<br/>solusinya</h2></td></tr>
     <tr><td>Selamat datang di "Pariwisata Malang Raya" ...</td></tr>
     <tr><td align=center><b>Profil<br/>"wisata-malang"</br></td></tr>
     <tr><td>Malang sejak masa kolonial dikenal sebagai tempat peristirahatan dan tujuan wisata bangsa Eropa terutama dari Negeri Belanda. Iklim tropis pegunungan yang sejuk dan kaya pemandangan indah serta lingkungan yang alami dikelilingi oleh perkebunan, pegunungan, sungai dan taman menjadikan Malang dikenal sebagai Paris Van East Java dan Switzerland of Indonesia. Malang juga merupakan pusat pertemuan beragam etnik, agama, kepercayaan dan budaya khas Jawa Timur yaitu Jawa Tengahan, Jawa Kulonan, Jawa Wetanan (Blambangan), Pesisi Lor dan Kidul, Madura, Osing (Jawa - Bali) dan Mandalungun (Madura - Jawa) sehingga memiliki keunikan serta daya tarik tersendiri. 
@@ -12,5 +17,4 @@ ob_start();
 </table>";
 
 <?php
-
 $body = ob_get_clean();
